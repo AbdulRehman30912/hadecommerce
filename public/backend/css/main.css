@@ -1,0 +1,54 @@
+a:hover{
+    outline: none;
+    text-decoration: none;
+    color: white;   
+   }
+   a:focus
+   {
+    outline: none;
+    text-decoration: none;
+   }
+   .icon{
+       color: white;
+   }
+
+   .button{
+   height: 28px;
+   width: 30px;
+   border: none;
+   transition: transform .2s;
+   }
+   .button:hover{
+       transform: scale(1.2); 
+   }
+
+   #btn1{
+       background-color: cornflowerblue
+   }
+   #btn2{
+       background-color: red;
+   }
+   #btn3{
+       background-color: orangered;
+   }
+
+   .platform{
+    background: linear-gradient( 13deg,#eb3349 , #f45c43);
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 3px;
+    color: white;
+   }
+
+   .p_img{
+    height: 59px;
+    width: 54px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+     border-radius: 0.6rem!important;
+     transition: transform 0.7;
+   }
+   .p_img:hover{
+    transform: scale(4); 
+    cursor: pointer;
+}
