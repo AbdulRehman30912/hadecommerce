@@ -69,7 +69,7 @@ a:focus {
     margin-right: 1px;
 }
 .alert_success{
-    background: linear-gradient( 13deg, #56ab2f, #a8e063);
+   background: green;
     padding: 0px 6px 3px 5px;
     border-radius: 10px;
     font-weight: 600;
