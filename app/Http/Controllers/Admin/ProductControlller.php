@@ -26,20 +26,22 @@ class ProductControlller extends Controller
         $products->brand_id = $request->brand_id;
         $products->description = $request->description;
         $products->platforms = $request->platforms;
+        $products->status = $request->status == true ? 1 : 0;
         $products->save();
 
-        $files = [];
         if ($request->hasFile('full')) {
             foreach ($request->file('full') as  $file) {
-                $filename = time() . '.' . $file->extension();
+                $filename = time() . '-' . $file->getClientOriginalName();
                 $file->move('storage/products/', $filename);
-                $files[] = $filename;
+                $multiFiles[] = $filename;
             }
         }
-        $filess = new ProductImage;
-        $filess->product_id = $products->id;
-        $filess->full = $files;
-        $filess->save();
+
+        $proimg = new ProductImage;
+        $proimg->product_id = $products->id;
+        $proimg->full = json_encode($multiFiles);
+        $proimg->save();
+
         return redirect()->route('product.index')->with('success', 'Product created successfully!');
     }
     public function index()

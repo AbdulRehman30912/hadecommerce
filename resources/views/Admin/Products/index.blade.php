@@ -1,3 +1,12 @@
+@php
+use App\Models\Categories;
+
+function getcat($a){
+$maincategory =Categories::where('id',$a)->get();
+return $maincategory;
+}
+@endphp
+
 @extends('Admin.Partials.header')
 @section('design')
 
@@ -9,12 +18,11 @@
 <table class="table table-striped mt-4" id="datatbl">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Name</th>
             <th>Maincategory</th>
             <th>Brands</th>
             <th>Image</th>
-            <th>Description</th>
+            <th>Status</th>
             <th>Available on</th>
             <th><i class="fa fa-bolt"></i></th>
         </tr>
@@ -22,17 +30,34 @@
     <tbody>
         @foreach ($products as $product)
         <tr>
-            <td>{{$product->id}}</td>
             <td>{{$product->name}}</td>
-            <td>{{$product->maincategory_id}}</td>
-            <td>{{$product->brand->name}}</td>
-           <td>
-               @foreach(json_decode($product->image->full,true) as $images)
-               <img src="{{asset('storage/products/'.$images)}}" alt="" class="p_img">
-               @endforeach
-         
-           </td>
-            <td>{{$product->description}}</td>
+            <td>
+                @php
+                $json= json_decode($product->maincategory_id, true);
+                foreach($json as $data)
+                {
+                foreach(getcat($data) as $maincategory)
+                {
+                echo '<span class="style">'.ucfirst($maincategory['maincategory']).'</span>';
+                }
+                }
+                @endphp
+            </td>
+            <td>{{ucfirst($product->brand->name)}}</td>
+            <td>
+                @php
+                $jsonimg= json_decode($product->image->full);
+                $jsonprint = $jsonimg[0];
+                @endphp
+                <img class="p_img" src="{{asset('storage/products/'.$jsonprint)}}" alt="">
+            </td>
+            <td>
+                @if ($product->status == 1)
+                    <span class="alert_success">Active</span>
+                    @else
+                    <span class="alert_danger">Not Active</span>
+                @endif
+            </td>
             <td>
                 @foreach ($product->platforms as $platform)
                 <span class="platform"> {{$platform}}</span>
@@ -46,15 +71,7 @@
         </tr>
         @endforeach
     </tbody>
-
-
 </table>
-
-
-
->
-
-
 <script type="text/javascript">
     $(document).ready(function() {
         $('#datatbl').DataTable();

@@ -1,54 +1,91 @@
-a:hover{
+a:hover {
     outline: none;
     text-decoration: none;
-    color: white;   
-   }
-   a:focus
-   {
-    outline: none;
-    text-decoration: none;
-   }
-   .icon{
-       color: white;
-   }
-
-   .button{
-   height: 28px;
-   width: 30px;
-   border: none;
-   transition: transform .2s;
-   }
-   .button:hover{
-       transform: scale(1.2); 
-   }
-
-   #btn1{
-       background-color: cornflowerblue
-   }
-   #btn2{
-       background-color: red;
-   }
-   #btn3{
-       background-color: orangered;
-   }
-
-   .platform{
-    background: linear-gradient( 13deg,#eb3349 , #f45c43);
-    border-radius: 3px;
-    font-size: 15px;
-    font-weight: 500;
-    padding: 3px;
     color: white;
-   }
+}
 
-   .p_img{
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.icon {
+    color: white;
+}
+
+.button {
+    height: 28px;
+    width: 30px;
+    border: none;
+    transition: transform .2s;
+}
+
+.button:hover {
+    transform: scale(1.2);
+}
+
+#btn1 {
+    background-color: cornflowerblue
+}
+
+#btn2 {
+    background-color: red;
+}
+
+#btn3 {
+    background-color: orangered;
+}
+
+.platform {
+    background: linear-gradient( 13deg, #fc4a1a, #f7b733);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0px 9px 3px 8px;
+    color: white;
+    margin-right: -3px;
+}
+
+.p_img {
     height: 59px;
     width: 54px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-     border-radius: 0.6rem!important;
-     transition: transform 0.7;
-   }
-   .p_img:hover{
-    transform: scale(4); 
+    border-radius: 0.6rem!important;
+    transition: transform 0.7;
+}
+
+.p_img:hover {
+    transform: scale(3.5);
     cursor: pointer;
 }
+
+.style {
+    background: linear-gradient( 13deg, #02aab0, #00cdac);
+    padding: 0px 6px 3px 5px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: white;
+    font-size: 14px;
+    margin-right: 1px;
+}
+.alert_success{
+    background: linear-gradient( 13deg, #56ab2f, #a8e063);
+    padding: 0px 6px 3px 5px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: white;
+    font-size: 14px;
+    margin-right: 1px;
+}
+.alert_danger
+{
+    background: red;
+    padding: 0px 6px 3px 5px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: white;
+    font-size: 13px;
+    margin-right: 1px;
+}
+
+
