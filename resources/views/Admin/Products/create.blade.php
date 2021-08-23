@@ -5,7 +5,7 @@
 <div class="alert alert-success" style="width:100%; ">{{Session::get('success')}}</div>
 @endif
 
-<div style="box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;height:670px; margin-top: 12px;">
+<div style="box-shadow: rgb(0 0 0 / 10%) 0px 10px 50px; height: 670px;margin-top: 12px;margin-left: 262px;">
     <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data" class="form-group" style="padding-top: 12px;">
         @csrf
         <h3 class="mt-4 ml-4">Create Product</h3>

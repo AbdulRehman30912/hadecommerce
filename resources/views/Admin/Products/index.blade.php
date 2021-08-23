@@ -11,7 +11,7 @@ return $maincategory;
 @section('design')
 
 @if (Session::has('success'))
-<div class="alert alert-success" style="width:100%; ">{{Session::get('success')}}</div>
+<div class="alert alert-success" style="width: 81%; margin-left: 262px; ">{{Session::get('success')}}</div>
 @endif
 
 <h3 class="mt-4">Product list</h3>

@@ -8,15 +8,17 @@
     <title>Document</title>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('backend/css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('backend/css/select2.min.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('backend/css/main.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('backend/css/datatables.min.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('backend/css/all.css')}}" />
+
     <!-- SCRIPT -->
-    <script src="{{asset('backend/js/jquery.min.js')}}"></script>
-    <script src="{{asset('backend/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('backend/js/select2.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('backend/js/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('backend/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('backend/js/select2.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('backend/js/datatables.min.js')}}"></script>
+
 
 </head>
 
@@ -30,6 +32,9 @@
     font-weight: 700; color:white;">Had's Store</font>
 
     </div>
+   
+@include('Admin.Partials.sidebar');
+
 </body>
 
 </html>
