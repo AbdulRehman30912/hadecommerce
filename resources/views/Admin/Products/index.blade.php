@@ -46,7 +46,7 @@ return $maincategory;
             <td>{{ucfirst($product->brand->name)}}</td>
             <td>
                 @php
-                $jsonimg= json_decode($product->image->full);
+                $jsonimg= json_decode($product->image['full']);
                 $jsonprint = $jsonimg[0];
                 @endphp
                 <img class="p_img" src="{{asset('storage/products/'.$jsonprint)}}" alt="">

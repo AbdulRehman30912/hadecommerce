@@ -20,6 +20,9 @@ class ProductControlller extends Controller
     }
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'full' => 'required'
+        ]);
         $products = new Products;
         $products->name = $request->name;
         $products->maincategory_id =  json_encode($request->maincategory_id, true);

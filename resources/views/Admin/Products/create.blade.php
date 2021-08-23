@@ -34,6 +34,8 @@
                 <br>
 
                 <input type="file" name="full[]" class="form-control ml-2 mt-4" multiple>
+                @error('full') {{$message}} @enderror
+
                 <div class="ml-2 mt-3">
                     <input type="checkbox" name="status"><span> Visible/Active</span>
                 </div>
