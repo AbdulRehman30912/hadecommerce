@@ -45,17 +45,16 @@ return $maincategory;
             </td>
             <td>{{ucfirst($product->brand->name)}}</td>
             <td>
-                @php
-                $jsonimg= json_decode($product->image['full']);
-                $jsonprint = $jsonimg[0];
-                @endphp
-                <img class="p_img" src="{{asset('storage/products/'.$jsonprint)}}" alt="">
+                <!-- @php
+                    $images= $product->image->first()->full;
+                @endphp -->
+                    <img class="p_img" src="{{asset('storage/products/'.$product->image->first()->full)}}" alt="">
             </td>
             <td>
                 @if ($product->status == 1)
-                    <span class="alert_success">Active</span>
-                    @else
-                    <span class="alert_danger">Not Active</span>
+                <span class="alert_success">Active</span>
+                @else
+                <span class="alert_danger">Not Active</span>
                 @endif
             </td>
             <td>
@@ -64,7 +63,7 @@ return $maincategory;
                 @endforeach
             </td>
             <td>
-                <button class="button" id="btn1"><a href="{{$product->id}}" class="fa fa-edit icon"></a></button>
+                <button class="button" id="btn1"><a href="{{route('product.edit',$product->id)}}" class="fa fa-edit icon"></a></button>
                 <button class="button" id="btn2"><a href="" class="fa fa-trash icon"></a></button>
                 <button class="button" id="btn3"><a href="" class="fa fa-clone icon "></a></button>
             </td>
